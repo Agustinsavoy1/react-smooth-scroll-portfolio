@@ -99,40 +99,45 @@ const Navbar = () => {
         <ul>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
             <a
-              className='flex justify-between items-center w-full text-gray-300'
-              href='/'
+              target='_blank'
+                            className='flex justify-between items-center w-full text-gray-300'
+              href='https://www.linkedin.com/in/juan-agustin-savoy-9b1103202' rel="noreferrer"
             >
               Linkedin <FaLinkedin size={30} />
             </a>
           </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-black-600'>
             <a
+            target='_blank'
               className='flex justify-between items-center w-full text-gray-300'
-              href='https://github.com/Agustinsavoy1'
+              href='https://github.com/Agustinsavoy1' rel="noreferrer"
             >
               Github <FaGithub size={30} />
             </a>
           </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-orange-600'>
             <a
+            target='_blank'
               className='flex justify-between items-center w-full text-gray-300'
-              href='https://agustinsavoy-portfolio.herokuapp.com/'
+              href='https://audiovisual-portfolio.herokuapp.com/' rel="noreferrer"
             >
               Audiovisual <FaCamera size={30} />
             </a>
           </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-red-600'>
             <a
+            target='_blank'
               className='flex justify-between items-center w-full text-gray-300'
-              href='https://www.youtube.com/channel/UC86dkdMChJP8VX1tcu6eiCA'
+              href='https://www.youtube.com/channel/UC86dkdMChJP8VX1tcu6eiCA' rel="noreferrer"
             >
               Youtube <FaYoutube size={30} />
             </a>
           </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-rose-600'>
             <a
+            target='_blank'
               className='flex justify-between items-center w-full text-gray-300'
-              href='https://www.instagram.com/agustinsavoy.json/'
+              href='https://www.instagram.com/agustinsavoy.json/' rel="noreferrer"
             >
               Instagram <FaInstagram size={30} />
             </a>

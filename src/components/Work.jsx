@@ -1,28 +1,13 @@
 import React, { useEffect, useState } from "react";
 import WorkImg from "../assets/workImg.jpeg";
+// import realEstate from "../assets/realestate.jpg";
 
 const Work = () => {
-  const [demo, setDemo] = useState([]);
   const [repoList, setRepoList] = useState([]);
 
   useEffect(() => {
-    fetch("http://api.github.com/users/agustinsavoy1")
-      .then((response) => response.json())
-      .then(
-        (data) => {
-          console.log(data);
-          setDemo(data);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
 
-      //Aca va el otro fetch Enviar CV a hello@selection-it.com para la posicion!
-  }, []);
-
-  useEffect(() => {
-    fetch("http://api.github.com/users/agustinsavoy1/repos")
+      fetch("https://api.github.com/users/agustinsavoy1/repos")
       .then((response) => response.json())
       .then(
         (data) => {
@@ -34,7 +19,11 @@ const Work = () => {
           console.log(error);
         }
       );
+
+      console.log()
   }, []);
+
+  
   return (
     <div name="work" className="w-full md:h-screen text-gray-300 bg-[#0a192f]">
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
@@ -58,8 +47,8 @@ const Work = () => {
                   <span className="text-2xl font-bold text-white tracking-wider text-justify">
                     {repo.name}
                   </span>
-                  <div className="pt-8 text-center">
-                    <a href={demo.blog}>
+                  <div className="pt-8 text-center"> 
+                    <a target="_blank" href={`https://${repo.name}.herokuapp.com`} rel="noreferrer">
                       <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
                         Demo
                       </button>
