@@ -114,9 +114,20 @@ const Work = () => {
               style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
               className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
             >
-              <p>{slides[currentIndex].name}</p>
-              <p>{slides[currentIndex].repo_url}</p>
-              <p>{slides[currentIndex].deploy_url}</p>
+              {/* <p className="">{slides[currentIndex].name}</p>
+              <p>{slides[currentIndex].description}</p> */}
+
+              <a href={slides[currentIndex].repo_url}>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute top-[70%] left-[5%]">
+                  REPO URL
+                </button>
+              </a>
+
+              <a href={slides[currentIndex].deploy_url}>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute top-[70%] right-[5%]">
+                  DEPLOYMENT
+                </button>
+              </a>
             </div>
             {/* Left Arrow */}
             <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
