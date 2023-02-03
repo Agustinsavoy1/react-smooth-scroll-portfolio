@@ -1,33 +1,58 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import WorkImg from "../assets/workImg.jpeg";
-// import realEstate from "../assets/realestate.jpg";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
 const Work = () => {
-  const [repoList, setRepoList] = useState([]);
+  // const [repoList, setRepoList] = useState([]);
 
-  console.log(repoList);
+  // console.log(repoList);
+
+  // const result = repoList.map((r) => [r.full_name, r.description, r.html_url]);
+
+  // //users = users.filter(obj => obj.name == filter.name && obj.address == filter.address)
+  // console.log(result);
 
   const slides = [
     {
       url: "https://api.pikwy.com/web/63dbd847e126aa6bbc5f180c.jpg",
+      repo_url:
+        "https://github.com/Agustinsavoy1/react-smooth-scroll-portfolio",
+      deploy_url: "https://portfolio-agustinsavoy1.vercel.app",
+      name: "Portfolio",
+      description: "Personal portfolio using React JS",
     },
     {
       url: "https://api.pikwy.com/web/63dbd8ee4ee75628eb639e3b.jpg",
+      repo_url: "https://github.com/Agustinsavoy1/bakeryapp",
+      deploy_url: "https://bakeryapp.vercel.app",
+      name: "Demilune",
+      description: "Landing page using React JS",
     },
     {
       url: "https://api.pikwy.com/web/63dbd94669772a24d27e249a.jpg",
+      repo_url: "https://github.com/Agustinsavoy1/pokemon-frontend",
+      deploy_url: "https://pokemon-frontend-seven.vercel.app",
+      name: "Pokemon App",
+      description:
+        "Full stack app using React, Redux, Express, Postgres and Sequelize",
     },
 
-    // {
-    //   url: "https://images.unsplash.com/photo-1512756290469-ec264b7fbf87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2253&q=80",
-    // },
-    // {
-    //   url: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2671&q=80",
-    // },
+    {
+      url: "https://api.pikwy.com/web/63dc830ad847d955673e3556.jpg",
+      repo_url: "https://github.com/Agustinsavoy1/react-whos-that-pokemon",
+      deploy_url: "https://whos-that-pokemon-six.vercel.app",
+      name: "Who's that pokemon?",
+      description: "Quizz game based on Pokemon using React JS",
+    },
+    {
+      url: "https://api.pikwy.com/web/63dca0c62f763e5ea569cd8a.jpg",
+      repo_url: "https://github.com/riveroide/PFBOOKTURNFRONTEND",
+      deploy_url: "https://pfbookturnfrontend.vercel.app",
+      name: "Bookturn",
+      description: "Full stack app using React, Redux and Strapi",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -50,20 +75,16 @@ const Work = () => {
 
   useEffect(() => {
     AOS.init();
-    fetch("https://api.github.com/users/agustinsavoy1/repos")
-      .then((response) => response.json())
-      .then(
-        (data) => {
-          console.log(data);
-
-          setRepoList(data);
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-
-    console.log();
+    // fetch("https://api.github.com/users/agustinsavoy1/repos")
+    //   .then((response) => response.json())
+    //   .then(
+    //     (data) => {
+    //       setRepoList(data);
+    //     },
+    //     (error) => {
+    //       console.log(error);
+    //     }
+    //   );
   }, []);
 
   return (
@@ -92,7 +113,11 @@ const Work = () => {
             <div
               style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
               className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
-            ></div>
+            >
+              <p>{slides[currentIndex].name}</p>
+              <p>{slides[currentIndex].repo_url}</p>
+              <p>{slides[currentIndex].deploy_url}</p>
+            </div>
             {/* Left Arrow */}
             <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
               <BsChevronCompactLeft onClick={prevSlide} size={30} />
